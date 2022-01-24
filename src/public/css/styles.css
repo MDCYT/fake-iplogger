@@ -1,0 +1,219 @@
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+
+body {
+    background: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+
+    /* Auto padding top */
+    padding-top: calc(var(--vh, 1vh) * 2);
+
+    /* Center and scale the masthead text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.masthead-video {
+
+    color: #ffffff;
+
+    /* Center and scale the masthead text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    /* fade in with the image and background color */
+
+}
+
+.masthead h1 {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+.masthead__subtitle {
+    font-size: 3.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.neon-button{
+    /* Make Neon Button */
+    background-color: #079cff10;
+    color: #ffffff;
+    font-size: 2rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #079cff;
+    border: #079cff 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+  
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
+    box-shadow: inset 0 0 0.5em 0 #079cff, 0 0 0.5em 0 #079cff;
+  
+    position: relative;
+    
+}
+.neon-button::before {
+    text-decoration: none;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #079cff;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+  
+.neon-button::after {
+    text-decoration: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em #079cff;
+    opacity: 0;
+    background-color: #079cff;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+.neon-button:hover,
+.neon-button:focus {
+  color: #000000;
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+  opacity: 1;
+}
+
+
+
+.rick {
+    /* Make the video litle bit smaller */
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.neon-button-video{
+    /* Make Neon Button */
+    background-color: #079cff10;
+    color: #ffffff;
+    font-size: 2rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #07ff51;
+    border: #07ff51 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+  
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
+    box-shadow: inset 0 0 0.5em 0 #07ff51, 0 0 0.5em 0 #07ff51;
+  
+    position: relative;
+    
+}
+.neon-button-video::before {
+    text-decoration: none;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #07ff51;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(0.5em);
+    opacity: 0.7;
+  }
+  
+.neon-button-video::after {
+    text-decoration: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em #07ff51;
+    opacity: 0;
+    background-color: #07ff51;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+.neon-button-video:hover,
+.neon-button-video:focus {
+  color: #000000;
+  text-shadow: none;
+}
+
+.neon-button-video:hover::before,
+.neon-button-video:focus::before {
+  opacity: 1;
+}
+.neon-button-video:hover::after,
+.neon-button-video:focus::after {
+  opacity: 1;
+}
+
+.zalgo {
+  /* Make the link a normal text withouth underline and without color */
+  text-decoration: none;
+  color: inherit;
+}
+
+.zalgo:hover {
+  /* Make the link a normal text withouth underline and without color */
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,91 @@
+<main class="index">
+
+    <div class="masthead 0-flex">
+        <h2 class="masthead__title">
+            Hola, le informamos que tenemos su informacion
+        </h2>
+        <!-- Warning the user -->
+        <div class="masthead__warning">
+            <p>
+                <strong>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    ¡Atención!
+                </strong>
+                <br>
+                Si te vas, tu informacion sera publicada en <a class="zalgo">{{{zalgo}}}</a> (Encrypted)
+            </p>
+        </div>
+        <p class="masthead__subtitle">
+            IP: {{ip}}
+        </p>
+        <p class="ip" style="display: none;">{{ip}}</p>
+        <video loop style="display: none;" id="vid" class="rick">
+            <source src="https://ia904503.us.archive.org/15/items/kikTXNL6MvX6ZpRXM/kikTXNL6MvX6ZpRXM.mp4"
+                type="video/mp4" width="500px" height="500">
+            Tu navegador no soporta video HTML5.
+        </video>
+        <br>
+        <!-- Make a button to play/pause the video -->
+        <a id="playpause" onclick="playpause()" class="neon-button">
+            Ver info completa...
+        </a>
+        {{!-- <button class="ubicacion">
+            Aqui iria tu ubicacion
+        </button> --}}
+
+    </div>
+
+    <script src="/js/page.js"></script>
+    <script>
+        // Experimentinal script
+        
+        {{!-- $.get('https://api.hackertarget.com/geoip/?q='+ ip, function(data) {
+          // Convert key-value pairs to JSON
+          // https://stackoverflow.com/a/39284735/452587
+          data = data.trim().split('\n').reduce(function(obj, pair) {
+            pair = pair.split(': ');
+            return obj[pair[0]] = pair[1], obj;
+          }, {});
+          for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                console.log(key + " -> " + data[key]);
+            }
+          }
+        }); --}}
+
+        {{!--
+
+
+        window.onbeforeunload = myConfirmation;
+
+                function onSuccess(position) {
+                    button.innerText = "Detecting your location...";
+                    let key = "{{{key}}}";
+                    let { latitude, longitude } = position.coords;
+                    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${key}`)
+                        .then(response => response.json()).then(response => {
+                            let allDetails = response.results[0].components;
+                            console.table(allDetails);
+                            let { city, state, country } = allDetails;
+                            button.innerText = `${city} ${state}, ${country}`;
+                        }).catch(() => {
+                            button.innerText = "Something went wrong";
+                        });
+                }
+                function onError(error) {
+                    if (error.code == 1) {
+                        button.innerText = "You denied the request";
+                    } else if (error.code == 2) {
+                        button.innerText = "Location is unavailable";
+                    } else {
+                        button.innerText = "Something went wrong";
+                    }
+                    button.setAttribute("disabled", "true");
+                }
+
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+--}}
+
+    </script>
+
+</main>
