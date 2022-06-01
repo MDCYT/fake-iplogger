@@ -147,7 +147,7 @@ function playpause () {
 
   let i = 0
 
-  setInterval(function () {
+  setInterval(() => {
     // Round the time to 1 decimal
     const time = Math.round(vid.currentTime * 10) / 10
 
