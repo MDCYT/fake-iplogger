@@ -55,6 +55,4 @@ app.use((req, res, next) => {
 })
 
 // Iniciar el servidor
-app.listen(app.get('port'), () => {
-  console.log('Server en el puerto', app.get('port'))
-})
+app.listen(app.get('port'), () => {})
