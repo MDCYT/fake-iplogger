@@ -7,11 +7,26 @@
     "dev": "nodemon src/",
     "start": "node src/index.js"
   },
-  "keywords": ["iplogger", "fake", "ip", "logger", "log", "logs", "logs-fake", "rickroll", "rickroll-fake", "rickroll-ip", "rickroll-logger", "rickroll-log", "rickroll-logs", "rickroll-logs-fake"],
+  "keywords": [
+    "iplogger",
+    "fake",
+    "ip",
+    "logger",
+    "log",
+    "logs",
+    "logs-fake",
+    "rickroll",
+    "rickroll-fake",
+    "rickroll-ip",
+    "rickroll-logger",
+    "rickroll-log",
+    "rickroll-logs",
+    "rickroll-logs-fake"
+  ],
   "author": {
     "name": "MDC",
     "email": "mdc@mycommand.xyz",
-    "url" : "http://github.com/MDCYT"
+    "url": "http://github.com/MDCYT"
   },
   "license": "ISC",
   "dependencies": {
@@ -28,8 +43,8 @@
   "bugs": {
     "email": "mdc@mycommand.xyz"
   },
-  "engines" : { 
-    "node" : ">=14.18.1" 
+  "engines": {
+    "node": ">=14.18.1"
   },
   "engineStrict": false
 }
