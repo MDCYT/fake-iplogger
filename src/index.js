@@ -1,60 +1,60 @@
-const express = require("express");
-const morgan = require("morgan");
-const exphbs = require("express-handlebars");
-const path = require("path");
-const cors = require("cors");
-//dotenv
-require("dotenv").config();
+const express = require('express')
+const morgan = require('morgan')
+const exphbs = require('express-handlebars')
+const path = require('path')
+const cors = require('cors')
+// dotenv
+require('dotenv').config()
 
-//Iniciliaciones
-const app = express();
+// Iniciliaciones
+const app = express()
 
 consoptions = {
-  origin: "/",
+  origin: '/',
   optionsSuccessStatus: 200,
-  methods: "GET",
-};
+  methods: 'GET'
+}
 
-//Configuraciones
-app.set("port", process.env.PORT || 3000);
-app.set("views", path.join(__dirname, "views"));
+// Configuraciones
+app.set('port', process.env.PORT || 3000)
+app.set('views', path.join(__dirname, 'views'))
 app.engine(
-  ".hbs",
+  '.hbs',
   exphbs({
-    defaultLayout: "main",
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
-    extname: ".hbs"  
+    defaultLayout: 'main',
+    layoutsDir: path.join(app.get('views'), 'layouts'),
+    partialsDir: path.join(app.get('views'), 'partials'),
+    extname: '.hbs'
   })
-);
-app.set("view engine", ".hbs");
+)
+app.set('view engine', '.hbs')
 
 // app use cors
-app.use("cors", cors(consoptions));
+app.use('cors', cors(consoptions))
 
-//MiddleWares
-app.use(morgan("dev"));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.set("json spaces", 2);
+// MiddleWares
+app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+app.set('json spaces', 2)
 
-//Variables Globales
+// Variables Globales
 app.use((req, res, next) => {
-  next();
-});
+  next()
+})
 
-//Rutas
-app.use(require("./router.js"));
+// Rutas
+app.use(require('./router.js'))
 
-//Publico
-app.use(express.static(path.join(__dirname, "public")));
+// Publico
+app.use(express.static(path.join(__dirname, 'public')))
 
-//Error 404
+// Error 404
 app.use((req, res, next) => {
-  res.redirect("/");
-});
+  res.redirect('/')
+})
 
-//Iniciar el servidor
-app.listen(app.get("port"), () => {
-  console.log("Server en el puerto", app.get("port"));
-});
+// Iniciar el servidor
+app.listen(app.get('port'), () => {
+  console.log('Server en el puerto', app.get('port'))
+})
