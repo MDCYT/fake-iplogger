@@ -55,4 +55,6 @@ app.use((req, res) => {
 })
 
 // Iniciar el servidor
-app.listen(app.get('port'), () => {/* empty */})
+app.listen(app.get('port'), () => {
+  /* empty */
+})

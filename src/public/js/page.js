@@ -170,8 +170,7 @@ function playpause () {
           Math.floor(Math.random() * (window_width - 1 + 1)) + 1
         const random_top =
           Math.floor(Math.random() * (window_height - 1 + 1)) + 1
-        const params =
-        `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+        const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=300,height=80,left=${random_left},top=${random_top}`
         setTimeout(() => {
           const newWin = window.open('about:blank', texts[i - 1].text, params)
