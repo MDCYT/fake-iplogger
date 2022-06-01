@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
   }
 
   zalgoText(text)
-  console.log('New request from: ' + ip)
+  
   res.render('index', {
     ip,
     zalgo,
