@@ -8,7 +8,7 @@ router.get('/whoami', (req, res) => {
   language = language.split(',')[0]
   let software = req.headers['user-agent']
   if (software.includes('curl')) {
-    software = '(' + software + ')'
+    software = `(${software})`
   }
   if (software.includes('Wget')) {
     // Muestrame el string sin los parentesis
@@ -16,14 +16,14 @@ router.get('/whoami', (req, res) => {
       software.indexOf('Wget') + 0,
       software.length
     )
-    software = '(' + software + ')'
+    software = `(${software})`
   }
   const softwareInfo = software.split('(') || ''
   software = softwareInfo[1].split(')')[0] || ''
   let device
   let architecture
   if (software.includes('Android')) {
-    software = 'Android' + software.split('Android')[1]
+    software = `Android${software.split('Android')[1]}`
     device = software.split(';')[1] || 'Mobile'
     // If have spaces in the start of the device name, remove it and show the rest of the device name
     if (device.charAt(0) === ' ') {
@@ -31,7 +31,7 @@ router.get('/whoami', (req, res) => {
     }
     software = software.split(';')[0]
   } else if (software.includes('Windows')) {
-    software = 'Windows' + software.split('Windows')[1]
+    software = `Windows${software.split('Windows')[1]}`
     architecture = software.split(';')[1] || 'Desktop'
     // If have spaces in the start of the device name, remove it and show the rest of the device name
     if (architecture.charAt(0) === ' ') {
@@ -42,7 +42,7 @@ router.get('/whoami', (req, res) => {
     }
     software = software.split(';')[0]
   } else if (software.includes('Macintosh')) {
-    software = 'Macintosh' + software.split('Macintosh')[1]
+    software = `Macintosh${software.split('Macintosh')[1]}`
     device = software.split(';')[1] || 'Macintosh'
     // If have spaces in the start of the device name, remove it and show the rest of the device name
     if (device.charAt(0) === ' ') {
@@ -50,7 +50,7 @@ router.get('/whoami', (req, res) => {
     }
     software = software.split(';')[0]
   } else if (software.includes('PlayStation')) {
-    device = 'PlayStation ' + software.split(' ')[1]
+    device = `PlayStation ${software.split(' ')[1]}`
     software = software.split(' ')[2]
   } else if (software.includes('curl')) {
     device = 'curl'

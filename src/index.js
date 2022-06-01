@@ -50,9 +50,9 @@ app.use(require('./router.js'))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Error 404
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.redirect('/')
 })
 
 // Iniciar el servidor
-app.listen(app.get('port'), () => {})
+app.listen(app.get('port'), () => {/* empty */})

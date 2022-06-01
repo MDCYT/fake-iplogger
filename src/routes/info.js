@@ -5,7 +5,7 @@ router.get('/:id', (req, res) => {
   const id = req.params.id
 
   const list = [
-    'https://es.infobyip.com/ip-' + id + '.html',
+    `https://es.infobyip.com/ip-${id.html}`,
     'https://invader-zim.herokuapp.com/paginas/777',
     'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     'https://www.youtube.com/watch?v=POD6w9G750Y',

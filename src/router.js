@@ -10,9 +10,9 @@ const consoptions = {
 }
 
 const path = require('path')
-const { readdir, readdirSync } = require('fs')
+const { readdirSync } = require('fs')
 
-readdirSync(__dirname + '/routes/').forEach(function (file) {
+readdirSync(`${__dirname}/routes/`).forEach(function (file) {
   if (file.endsWith('.js')) {
     // Make a route with the name of the file
     const route = require(`./routes/${file}`)

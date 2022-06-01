@@ -6,7 +6,7 @@ ip = ip.replace('IP: ', '').replace(' ', '')
 // ip to string
 ip = ip.toString()
 
-const button = document.getElementsByClassName('ubicacion')[0]
+// const button = document.getElementsByClassName('ubicacion')[0]
 
 function playpause () {
   const vid = document.getElementById('vid')
@@ -163,7 +163,7 @@ function playpause () {
 
       if (i >= 2) {
         // Change the text of the p with the class mastead__subtitle
-        p_id.innerHTML = 'IP: ' + texts[i - 1].text
+        p_id.innerHTML = `IP: ${texts[i - 1].text}`
         const window_width = window.innerWidth
         const window_height = window.innerHeight
         const random_left =
@@ -171,11 +171,8 @@ function playpause () {
         const random_top =
           Math.floor(Math.random() * (window_height - 1 + 1)) + 1
         const params =
-          `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-width=300,height=80,left=` +
-          random_left +
-          ',top=' +
-          random_top
+        `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=300,height=80,left=${random_left},top=${random_top}`
         setTimeout(() => {
           const newWin = window.open('about:blank', texts[i - 1].text, params)
           newWin.document.write(texts[i - 1].text)
@@ -186,7 +183,7 @@ width=300,height=80,left=` +
 
   document.getElementById('playpause').onclick = function () {
     // Open new tab
-    window.open('/info/' + ip, '_blank')
+    window.open(`/info/${ip}`, '_blank')
   }
 }
 
