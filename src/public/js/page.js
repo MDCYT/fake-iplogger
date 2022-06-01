@@ -150,7 +150,7 @@ function playpause () {
   setInterval(function () {
     // Round the time to 1 decimal
     const time = Math.round(vid.currentTime * 10) / 10
-    
+
     if (time >= texts[i].time) {
       // Change the title
       title.innerHTML = texts[i].text
